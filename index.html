@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Baikálov | Backend Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 print:bg-white">
+    <div class="max-w-4xl mx-auto my-8 px-4 print:my-0 print:px-0">
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row gap-6 mb-8 print:flex-row">
+            <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary shadow-lg print:w-24 print:h-24">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEWFpmIpUQyeQ/profile-displayphoto-crop_800_800/B4EZv2Tj_UGsAM-/0/1769363882346?e=1770854400&v=beta&t=DOrOGWP6BbIEKmu2POiM4QxTdonrbtvQlCDEAHRTfMo"
+                    alt="Alexander Baikálov" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold text-gray-800 print:text-2xl">Alexander Baikálov</h1>
+                <h2 class="text-xl text-primary font-semibold mb-2 print:text-lg">Back End Developer | Data Science &
+                    Software Engineering</h2>
+
+                <div class="flex flex-wrap gap-4 text-sm text-gray-600 print:text-xs">
+                    <div class="flex items-center">
+                        <i data-feather="map-pin" class="w-4 h-4 mr-1"></i>
+                        <span>Barcelona, Spain</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="phone" class="w-4 h-4 mr-1"></i>
+                        <span>+34 633 83 75 66</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="mail" class="w-4 h-4 mr-1"></i>
+                        <span>abaikalov@uoc.edu</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="github" class="w-4 h-4 mr-1"></i>
+                        <a href="https://github.com/alexanderbkl" class="hover:underline">GitHub</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="globe" class="w-4 h-4 mr-1"></i>
+                        <a href="https://alexanderbkl.github.io/" class="hover:underline">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 print:grid-cols-3">
+            <!-- Left Column -->
+            <div class="md:col-span-2 space-y-8 print:col-span-2">
+                <!-- Professional Summary -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Professional Summary</h2>
+                    <p class="text-gray-700">
+                        Backend developer with expertise in microservice architecture, API development, and database
+                        optimization.
+                        Currently working at Dribba while pursuing a Bachelor's in Data Science at Universitat Oberta de
+                        Catalunya.
+                        Proven track record in scalable backend solutions, decentralized systems, and full-stack
+                        development.
+                        Fluent in English, Spanish, Russian, and Catalan.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Experience</h2>
+
+                    <div class="space-y-6">
+                        <!-- Current Position -->
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Back End Developer @ Dribba, the mobile agency
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">Barcelona - Hybrid</p>
+                                </div>
+                                <span class="bg-primary text-white px-2 py-1 rounded text-xs whitespace-nowrap">Mar 2025
+                                    - Present</span>
+                            </div>
+                            <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
+                                <li>Backend development, microservices, server-side programming</li>
+                                <li>Skills: Back-End Web Development, Back-end Operations, Server Programming, Server
+                                    Side Programming</li>
+                            </ul>
+                        </div>
+
+                        <!-- Previous Positions -->
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Launch & Growth @ Bcombinator</h3>
+                                    <p class="text-gray-600 text-sm">Barcelona</p>
+                                </div>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap">Feb 2023 - Oct
+                                    2024</span>
+                            </div>
+                            <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
+                                <li>Supporting business launches with technical solutions</li>
+                                <li>Skills: Web3, AWS, Linux, IPFS, Docker, APIs, Go</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Software Engineer @ hello.app</h3>
+                                    <p class="text-gray-600 text-sm">Barcelona</p>
+                                </div>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap">Apr 2022 - Oct
+                                    2024</span>
+                            </div>
+                            <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
+                                <li>Full-time position developing backend systems</li>
+                                <li>Skills: PostgreSQL, AWS, Linux, Docker, APIs, Code Review, REST, Data Analysis, Go
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Freelancer @ IT</h3>
+                                    <p class="text-gray-600 text-sm">Remote</p>
+                                </div>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap">Jan 2021 - Apr
+                                    2022</span>
+                            </div>
+                            <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
+                                <li>Mid to small software development projects</li>
+                                <li>Including: CMS's, processes automatization, app development, data scrapers,
+                                    crawlers, education, portfolios.</li>
+                            </ul>
+                        </div>
+
+                        <!-- More positions can be added here following the same structure -->
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Featured Projects</h2>
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Project 1 -->
+                        <div class="border border-gray-200 rounded p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-gray-800">wallapop-flip-opportunities</h3>
+                            <p class="text-sm text-gray-600 mb-2">Python, Jupyter Notebook</p>
+                            <p class="text-gray-700 mb-2">
+                                A flip opportunity prediction service based on multiple processes to scrape, extract,
+                                analyze and train a flip opportunity machine learning prediction model.
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Technologies: AI, Data Science, Machine Learning, Data Engineering, Data Analysis
+                            </p>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="border border-gray-200 rounded p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-gray-800">obramat-crawler</h3>
+                            <p class="text-sm text-gray-600 mb-2">JavaScript</p>
+                            <p class="text-gray-700 mb-2">
+                                A system to retrieve data from obramat platform for analytics and statistics. Sleek
+                                analytics dashboard and data crawler of a construction site.
+                            </p>
+                        </div>
+
+                        <!-- More projects can be added here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-8">
+                <!-- Skills -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Technical Skills</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Backend & Server</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Go</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">PostgreSQL</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">REST APIs</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">GraphQL</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">gRPC</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Docker</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Linux</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">AWS</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Languages & Frameworks</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">TypeScript</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">JavaScript</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Node.js</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">React.js</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Java</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Kotlin</span>
+                                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Python</span>
+                            </div>
+                        </div>
+
+                        <!-- More skill categories can be added here -->
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Education</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Bachelor's in Data Science</h3>
+                            <p class="text-gray-600 text-sm">Universitat Oberta de Catalunya (UOC)</p>
+                            <p class="text-gray-500 text-xs">Feb 2025 - Present</p>
+                            <p class="text-gray-700 text-sm mt-1">Focus: Machine Learning, Big Data</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Associate's in Web Development</h3>
+                            <p class="text-gray-600 text-sm">IES La Pineda</p>
+                            <p class="text-gray-500 text-xs">Sep 2021 - Jun 2023</p>
+                            <p class="text-gray-700 text-sm mt-1">Fullstack web development: design, responsiveness,
+                                backend, frontend, entrepreneurship, teamwork</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Languages</h2>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">English</span>
+                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Spanish</span>
+                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Russian</span>
+                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Catalan</span>
+                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">German</span>
+                            <span class="text-sm text-gray-600">Elementary</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
+                        Certifications</h2>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
+                            <span>Git & GitHub - OpenWebinars (Mar 2023)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
+                            <span>Agile UML - OpenWebinars (Dec 2022)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
+                            <span>Introduction to Testing - OpenWebinars (Jan 2023)</span>
+                        </li>
+                        <!-- More certifications can be added here -->
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <div class="fixed bottom-4 right-4 print:hidden">
+        <button onclick="window.print()"
+            class="bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors flex items-center">
+            <i data-feather="printer" class="w-4 h-4 mr-2"></i>
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Ensure links are visible in print
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+                if (link.href) {
+                    const urlSpan = document.createElement('span');
+                    urlSpan.className = 'print-url text-xs text-gray-500 block print:inline print:ml-1';
+                    urlSpan.textContent = `(${link.href})`;
+                    link.appendChild(urlSpan);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
