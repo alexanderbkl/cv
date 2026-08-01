@@ -21,20 +21,46 @@
             }
         }
     </script>
+    <style>
+        .lang-btn {
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #3B82F6;
+            color: white;
+            border-color: #3B82F6;
+        }
+        .lang-btn:not(.active):hover {
+            background-color: #EFF6FF;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+        }
+    </style>
+<base target="_blank">
 </head>
 
 <body class="bg-gray-50 print:bg-white">
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2 no-print">
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active border border-gray-300 px-3 py-1 rounded-md text-sm font-medium bg-white text-gray-700">
+            EN
+        </button>
+        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn border border-gray-300 px-3 py-1 rounded-md text-sm font-medium bg-white text-gray-700">
+            ES
+        </button>
+    </div>
+
     <div class="max-w-4xl mx-auto my-8 px-4 print:my-0 print:px-0">
         <!-- Header Section -->
         <header class="flex flex-col md:flex-row gap-6 mb-8 print:flex-row">
             <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary shadow-lg print:w-24 print:h-24">
-                <img src="profile-image.jpg"
-                    alt="Alexander Baikálov" class="w-full h-full object-cover">
+                <img src="profile-image.jpg" alt="Alexander Baikálov" class="w-full h-full object-cover">
             </div>
             <div class="flex-1">
                 <h1 class="text-3xl font-bold text-gray-800 print:text-2xl">Alexander Baikálov</h1>
-                <h2 class="text-xl text-primary font-semibold mb-2 print:text-lg">Back End Developer | Data Science &
-                    Software Engineering</h2>
+                <h2 class="text-xl text-primary font-semibold mb-2 print:text-lg" data-i18n="title">Back End Developer | Data Science & Software Engineering</h2>
 
                 <div class="flex flex-wrap gap-4 text-sm text-gray-600 print:text-xs">
                     <div class="flex items-center">
@@ -59,7 +85,7 @@
                     </div>
                     <div class="flex items-center">
                         <i data-feather="globe" class="w-4 h-4 mr-1"></i>
-                        <a href="https://alexanderbkl.github.io/" class="hover:underline">Portfolio</a>
+                        <a href="https://alexanderbkl.github.io/" class="hover:underline" data-i18n="portfolio">Portfolio</a>
                     </div>
                 </div>
             </div>
@@ -70,45 +96,40 @@
             <div class="md:col-span-2 space-y-8 print:col-span-2">
                 <!-- Professional Summary -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Professional Summary</h2>
-                    <p class="text-gray-700">
-                        Backend developer with expertise in microservice architecture, API development, and database
-                        optimization.
-                        Currently working at Dribba while pursuing a Bachelor's in Data Science at UOC part-time.
-                        Proven track record in scalable backend solutions, decentralized systems, and full-stack
-                        development.
-                        Fluent in English, Spanish, Russian, and Catalan.
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="summary_title">
+                        Professional Summary
+                    </h2>
+                    <p class="text-gray-700" data-i18n="summary_text">
+                        Backend developer with expertise in microservice architecture, API development, and database optimization. Proven track record in scalable backend solutions, decentralized systems, and full-stack development. Fluent in English, Spanish, Russian, and Catalan.
                     </p>
                 </section>
 
                 <!-- Experience -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Experience</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="experience_title">
+                        Experience
+                    </h2>
 
                     <div class="space-y-6">
                         <!-- Current Position -->
                         <div>
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-bold text-gray-800">Back End Developer @ Dribba, the mobile agency
-                                    </h3>
+                                    <h3 class="font-bold text-gray-800" data-i18n="job1_title">Back End Developer @ Dribba, the mobile agency</h3>
                                     <p class="text-gray-600 text-sm">Barcelona - Hybrid</p>
                                 </div>
-                                <span class="bg-primary text-white px-2 py-1 rounded text-xs whitespace-nowrap">Mar 2025
-                                    - Present</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded text-xs whitespace-nowrap" data-i18n="job1_date">Mar 2025 - July 2026</span>
                             </div>
                             <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
-                                <li>Backend development, microservices with hexagonal architecture
-                                    <br>Data transfer with GraphQL and gRPC API development with Go.
-                                    <br>Built Go services using goroutines, channels, and context for concurrency and performance.
-                                    <br>Optimized services with profiling, added resilient patterns (retries, circuit breakers, transactions).
-                                    <br>Google Cloud management (Registry, Observability, Logging, Performance
-                                    Analysis)
+                                <li data-i18n="job1_desc1">
+                                    Backend development, microservices with hexagonal architecture.<br>
+                                    Data transfer with GraphQL and gRPC API development with Go.<br>
+                                    Built Go services using goroutines, channels, and context for concurrency and performance.<br>
+                                    Optimized services with profiling, added resilient patterns (retries, circuit breakers, transactions).<br>
+                                    Google Cloud management (Registry, Observability, Logging, Performance Analysis)
                                 </li>
-                                <li>Skills: Back-End Development (Golang mostly), Google Cloud, Kubernetes Cluster Management, Elasticsearch end-to-end
-                                    management, Gitlab CI/CD pipelines
+                                <li data-i18n="job1_desc2">
+                                    Skills: Back-End Development (Golang mostly), Google Cloud, Kubernetes Cluster Management, Elasticsearch end-to-end management, Gitlab CI/CD pipelines
                                 </li>
                             </ul>
                         </div>
@@ -117,113 +138,96 @@
                         <div>
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-bold text-gray-800">Software Engineer @ hello.app</h3>
+                                    <h3 class="font-bold text-gray-800" data-i18n="job2_title">Software Engineer @ hello.app</h3>
                                     <p class="text-gray-600 text-sm">Barcelona</p>
                                 </div>
-                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap">Apr 2022 - Oct
-                                    2024</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap" data-i18n="job2_date">Apr 2022 - Oct 2024</span>
                             </div>
                             <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
-                                <li>Full-time position developing backend and frontend systems.
-                                    <br>Initial core architecture development from scratch and kubernetes setup.
-                                    <br>Amazon Web Services management (instance management, load balancing, domain management)
+                                <li data-i18n="job2_desc1">
+                                    Full-time position developing backend and frontend systems.<br>
+                                    Initial core architecture development from scratch and kubernetes setup.<br>
+                                    Amazon Web Services management (instance management, load balancing, domain management)
                                 </li>
-                                <li>Skills: Golang, AWS, PostgreSQL, Kubernetes, Linux, Docker, APIs, Code Review, REST, Data Analysis
+                                <li data-i18n="job2_desc2">
+                                    Skills: Golang, AWS, PostgreSQL, Kubernetes, Linux, Docker, APIs, Code Review, REST, Data Analysis
                                 </li>
                             </ul>
                         </div>
+
                         <div>
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-bold text-gray-800">Freelancer @ IT</h3>
+                                    <h3 class="font-bold text-gray-800" data-i18n="job3_title">Freelancer @ IT</h3>
                                     <p class="text-gray-600 text-sm">Remote</p>
                                 </div>
-                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap">Jan 2021 - Apr
-                                    2022</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs whitespace-nowrap" data-i18n="job3_date">Jan 2021 - Apr 2022</span>
                             </div>
                             <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-1">
-                                <li>Mid to small software development projects</li>
-                                <li>Including: CMS's, processes automatization, app development, data scrapers,
-                                    crawlers, education, portfolios.</li>
+                                <li data-i18n="job3_desc1">Mid to small software development projects</li>
+                                <li data-i18n="job3_desc2">Including: CMS's, processes automatization, app development, data scrapers, crawlers, education, portfolios.</li>
                             </ul>
 
                             <div class="mt-3 space-y-3">
                                 <div>
                                     <p class="text-gray-800 font-semibold text-sm">
-                                        <a href="https://github.com/alexanderbkl/mercari_crawler"
-                                            class="text-primary hover:underline">Mercari Crawler</a>
-                                        <span class="text-gray-500 font-normal">— Python</span>
+                                        <a href="https://github.com/alexanderbkl/mercari_crawler" class="text-primary hover:underline">Mercari Crawler</a>
+                                        <span class="text-gray-500 font-normal"> — Python</span>
                                     </p>
-                                    <p class="text-gray-700 text-sm">Freelance data-scraping tool still used to date and profitable to crawl, parse and
-                                        clean Mercari product listings into structured, analysis-ready datasets.</p>
+                                    <p class="text-gray-700 text-sm" data-i18n="project_mercari">
+                                        Freelance data-scraping tool still used to date and profitable to crawl, parse and clean Mercari product listings into structured, analysis-ready datasets.
+                                    </p>
                                 </div>
 
                                 <div>
-                                    <p class="text-gray-800 font-semibold text-sm">VidreBany Factory — Workforce Management
-                                        Platform</p>
-                                    <p class="text-gray-700 text-sm mb-1">End-to-end freelance build: REST API,
-                                        internal admin dashboard and native Android app.</p>
+                                    <p class="text-gray-800 font-semibold text-sm" data-i18n="vidrebany_title">VidreBany Factory — Workforce Management Platform</p>
+                                    <p class="text-gray-700 text-sm mb-1" data-i18n="vidrebany_desc">End-to-end freelance build: REST API, internal admin dashboard and native Android app.</p>
                                     <ul class="ml-4 list-disc text-gray-700 space-y-1 text-sm">
                                         <li>
-                                            <a href="https://github.com/alexanderbkl/vidre-back"
-                                                class="text-primary hover:underline">Backend</a>
-                                            <span class="text-gray-500">(Go, Gin)</span> — REST API with worker CRUD,
-                                            work day scheduling, extra hours & public holiday management, PASETO
-                                            auth, rate limiting, CORS, and Dockerized dev/prod deployments.
+                                            <a href="https://github.com/alexanderbkl/vidre-back" class="text-primary hover:underline">Backend</a>
+                                            <span class="text-gray-500">(Go, Gin)</span> — <span data-i18n="vidrebany_backend">REST API with worker CRUD, work day scheduling, extra hours & public holiday management, PASETO auth, rate limiting, CORS, and Dockerized dev/prod deployments.</span>
                                         </li>
                                         <li>
-                                            <a href="https://github.com/alexanderbkl/VidreBanyCPanel"
-                                                class="text-primary hover:underline">Dashboard</a>
-                                            <span class="text-gray-500">(React, TypeScript, Firebase)</span> — Internal
-                                            admin panel for production/standby/transport orders, user & admin
-                                            management, non-conformity reporting with file uploads, and employee
-                                            time-tracking, all synced in real time.
+                                            <a href="https://github.com/alexanderbkl/VidreBanyCPanel" class="text-primary hover:underline">Dashboard</a>
+                                            <span class="text-gray-500">(React, TypeScript, Firebase)</span> — <span data-i18n="vidrebany_dashboard">Internal admin panel for production/standby/transport orders, user & admin management, non-conformity reporting with file uploads, and employee time-tracking, all synced in real time.</span>
                                         </li>
                                         <li>
-                                            <a href="https://github.com/alexanderbkl/ProcessesScan"
-                                                class="text-primary hover:underline">App</a>
-                                            <span class="text-gray-500">(Java, Kotlin, Android)</span> — Native app
-                                            with QR/barcode scanning for order and process management, enforcing
-                                            sequential process validation and automatic order lifecycle handling.
+                                            <a href="https://github.com/alexanderbkl/ProcessesScan" class="text-primary hover:underline">App</a>
+                                            <span class="text-gray-500">(Java, Kotlin, Android)</span> — <span data-i18n="vidrebany_app">Native app with QR/barcode scanning for order and process management, enforcing sequential process validation and automatic order lifecycle handling.</span>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div>
                                     <p class="text-gray-800 font-semibold text-sm">
-                                        <a href="https://github.com/alexanderbkl/yoganetwork"
-                                            class="text-primary hover:underline">SoulFriends</a>
-                                        <span class="text-gray-500 font-normal">— Java, Kotlin, Android</span>
+                                        <a href="https://github.com/alexanderbkl/yoganetwork" class="text-primary hover:underline">SoulFriends</a>
+                                        <span class="text-gray-500 font-normal"> — Java, Kotlin, Android</span>
                                     </p>
-                                    <p class="text-gray-700 text-sm">Social networking app for yoga enthusiasts:
-                                        Officialy deployed at Play Store, a firebase-powered real-time chat, location-based discovery with map, posts with
-                                        likes/comments and media, push notifications, swipeable profile matching, and
-                                        YouTube video playback.</p>
+                                    <p class="text-gray-700 text-sm" data-i18n="project_soulfriends">
+                                        Social networking app for yoga enthusiasts: Officially deployed at Play Store, a firebase-powered real-time chat, location-based discovery with map, posts with likes/comments and media, push notifications, swipeable profile matching, and YouTube video playback.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- More positions can be added here following the same structure -->
                     </div>
                 </section>
 
                 <!-- Projects -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Featured Projects</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="projects_title">
+                        Featured Projects
+                    </h2>
                     <div class="grid grid-cols-1 gap-4">
                         <!-- Project 1 -->
                         <div class="border border-gray-200 rounded p-4 hover:shadow-md transition-shadow">
                             <h3 class="font-bold text-gray-800">
-                                <a href="https://github.com/alexanderbkl/wallapop-flip-opportunities"
-                                    class="text-primary hover:underline">wallapop-flip-opportunities</a>
+                                <a href="https://github.com/alexanderbkl/wallapop-flip-opportunities" class="text-primary hover:underline">wallapop-flip-opportunities</a>
                             </h3>
                             <p class="text-sm text-gray-600 mb-2">Python, Jupyter Notebook</p>
-                            <p class="text-gray-700 mb-2">
-                                A flip opportunity prediction service based on multiple processes to scrape, extract,
-                                analyze and train a flip opportunity machine learning prediction model.
+                            <p class="text-gray-700 mb-2" data-i18n="project_wallapop">
+                                A flip opportunity prediction service based on multiple processes to scrape, extract, analyze and train a flip opportunity machine learning prediction model.
                             </p>
-                            <p class="text-sm text-gray-600">
+                            <p class="text-sm text-gray-600" data-i18n="project_wallapop_tech">
                                 Technologies: AI, Data Science, Machine Learning, Data Engineering, Data Analysis
                             </p>
                         </div>
@@ -231,17 +235,13 @@
                         <!-- Project 2 -->
                         <div class="border border-gray-200 rounded p-4 hover:shadow-md transition-shadow">
                             <h3 class="font-bold text-gray-800">
-                                <a href="https://github.com/alexanderbkl/obramat-crawler"
-                                    class="text-primary hover:underline">obramat-crawler</a>
+                                <a href="https://github.com/alexanderbkl/obramat-crawler" class="text-primary hover:underline">obramat-crawler</a>
                             </h3>
                             <p class="text-sm text-gray-600 mb-2">JavaScript</p>
-                            <p class="text-gray-700 mb-2">
-                                A system to retrieve data from obramat platform for analytics and statistics. Sleek
-                                analytics dashboard and data crawler of a construction site.
+                            <p class="text-gray-700 mb-2" data-i18n="project_obramat">
+                                A system to retrieve data from obramat platform for analytics and statistics. Sleek analytics dashboard and data crawler of a construction site.
                             </p>
                         </div>
-
-                        <!-- More projects can be added here -->
                     </div>
                 </section>
             </div>
@@ -250,11 +250,12 @@
             <div class="space-y-8">
                 <!-- Skills -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Technical Skills</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="skills_title">
+                        Technical Skills
+                    </h2>
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-semibold text-gray-800">Backend & Server</h3>
+                            <h3 class="font-semibold text-gray-800" data-i18n="skills_backend">Backend & Server</h3>
                             <div class="flex flex-wrap gap-2 mt-2">
                                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Linux</span>
                                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">PostgreSQL</span>
@@ -269,7 +270,7 @@
                         </div>
 
                         <div>
-                            <h3 class="font-semibold text-gray-800">Languages & Frameworks</h3>
+                            <h3 class="font-semibold text-gray-800" data-i18n="skills_languages">Languages & Frameworks</h3>
                             <div class="flex flex-wrap gap-2 mt-2">
                                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Go</span>
                                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">TypeScript</span>
@@ -281,29 +282,27 @@
                                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Python</span>
                             </div>
                         </div>
-
-                        <!-- More skill categories can be added here -->
                     </div>
                 </section>
 
                 <!-- Education -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Education</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="education_title">
+                        Education
+                    </h2>
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-semibold text-gray-800">Bachelor's in Data Science</h3>
+                            <h3 class="font-semibold text-gray-800" data-i18n="edu1_degree">Bachelor's in Data Science</h3>
                             <p class="text-gray-600 text-sm">Universitat Oberta de Catalunya (UOC)</p>
-                            <p class="text-gray-500 text-xs">Feb 2025 - Present</p>
-                            <p class="text-gray-700 text-sm mt-1">Focus: Machine Learning, Big Data</p>
+                            <p class="text-gray-500 text-xs" data-i18n="edu1_date">Feb 2025 - Present</p>
+                            <p class="text-gray-700 text-sm mt-1" data-i18n="edu1_focus">Focus: Machine Learning, Big Data</p>
                         </div>
 
                         <div>
-                            <h3 class="font-semibold text-gray-800">Associate's in Web Development</h3>
+                            <h3 class="font-semibold text-gray-800" data-i18n="edu2_degree">Associate's in Web Development</h3>
                             <p class="text-gray-600 text-sm">IES La Pineda</p>
-                            <p class="text-gray-500 text-xs">Sep 2021 - Jun 2023</p>
-                            <p class="text-gray-700 text-sm mt-1">Fullstack web development: design, responsiveness,
-                                backend, frontend, entrepreneurship, teamwork</p>
+                            <p class="text-gray-500 text-xs" data-i18n="edu2_date">Sep 2021 - Jun 2023</p>
+                            <p class="text-gray-700 text-sm mt-1" data-i18n="edu2_desc">Fullstack web development: design, responsiveness, backend, frontend, entrepreneurship, teamwork</p>
                         </div>
                     </div>
                 </section>
@@ -311,74 +310,207 @@
                 <!-- Languages -->
                 <section>
                     <br>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Languages</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="languages_title">
+                        Languages
+                    </h2>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-gray-700">English</span>
-                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                            <span class="text-sm text-gray-600" data-i18n="lang_native">Native or bilingual</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-700">Spanish</span>
-                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                            <span class="text-sm text-gray-600" data-i18n="lang_native">Native or bilingual</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-700">Russian</span>
-                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                            <span class="text-sm text-gray-600" data-i18n="lang_native">Native or bilingual</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-700">Catalan</span>
-                            <span class="text-sm text-gray-600">Native or bilingual</span>
+                            <span class="text-sm text-gray-600" data-i18n="lang_native">Native or bilingual</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-700">German</span>
-                            <span class="text-sm text-gray-600">Elementary</span>
+                            <span class="text-sm text-gray-600" data-i18n="lang_elementary">Elementary</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Certifications -->
                 <section>
-                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg">
-                        Certifications</h2>
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-1 mb-4 print:text-lg" data-i18n="certifications_title">
+                        Certifications
+                    </h2>
                     <ul class="space-y-2 text-sm text-gray-700">
                         <li class="flex items-start">
                             <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
-                            <span>Git & GitHub - OpenWebinars (Mar 2023)</span>
+                            <span data-i18n="cert1">Git & GitHub - OpenWebinars (Mar 2023)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
-                            <span>Agile UML - OpenWebinars (Dec 2022)</span>
+                            <span data-i18n="cert2">Agile UML - OpenWebinars (Dec 2022)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check" class="w-4 h-4 mr-2 text-primary mt-0.5"></i>
-                            <span>Introduction to Testing - OpenWebinars (Jan 2023)</span>
+                            <span data-i18n="cert3">Introduction to Testing - OpenWebinars (Jan 2023)</span>
                         </li>
-                        <!-- More certifications can be added here -->
                     </ul>
                 </section>
             </div>
         </div>
     </div>
 
-    <!-- Print Button -->
-    <div class="fixed bottom-4 right-4 print:hidden">
-        <button onclick="window.print()"
+    <!-- Print / PDF Button -->
+    <div class="fixed bottom-4 right-4 print:hidden no-print">
+        <button onclick="downloadPDF()"
             class="bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors flex items-center">
             <i data-feather="printer" class="w-4 h-4 mr-2"></i>
-            Print / Save as PDF
+            <span data-i18n="print_btn">Print / Save as PDF</span>
         </button>
     </div>
 
     <script>
-        feather.replace();
+        // ===== TRANSLATIONS =====
+        const translations = {
+            en: {
+                title: "Back End Developer | Data Science & Software Engineering",
+                portfolio: "Portfolio",
+                summary_title: "Professional Summary",
+                summary_text: "Backend developer with expertise in microservice architecture, API development, and database optimization. Proven track record in scalable backend solutions, decentralized systems, and full-stack development. Fluent in English, Spanish, Russian, and Catalan.",
+                experience_title: "Experience",
+                job1_title: "Back End Developer @ Dribba, the mobile agency",
+                job1_date: "Mar 2025 - Present",
+                job1_desc1: "Backend development, microservices with hexagonal architecture<br>Data transfer with GraphQL and gRPC API development with Go.<br>Built Go services using goroutines, channels, and context for concurrency and performance.<br>Optimized services with profiling, added resilient patterns (retries, circuit breakers, transactions).<br>Google Cloud management (Registry, Observability, Logging, Performance Analysis)",
+                job1_desc2: "Skills: Back-End Development (Golang mostly), Google Cloud, Kubernetes Cluster Management, Elasticsearch end-to-end management, Gitlab CI/CD pipelines",
+                job2_title: "Software Engineer @ hello.app",
+                job2_date: "Apr 2022 - Oct 2024",
+                job2_desc1: "Full-time position developing backend and frontend systems.<br>Initial core architecture development from scratch and kubernetes setup.<br>Amazon Web Services management (instance management, load balancing, domain management)",
+                job2_desc2: "Skills: Golang, AWS, PostgreSQL, Kubernetes, Linux, Docker, APIs, Code Review, REST, Data Analysis",
+                job3_title: "Freelancer @ IT",
+                job3_date: "Jan 2021 - Apr 2022",
+                job3_desc1: "Mid to small software development projects",
+                job3_desc2: "Including: CMS's, processes automatization, app development, data scrapers, crawlers, education, portfolios.",
+                project_mercari: "Freelance data-scraping tool still used to date and profitable to crawl, parse and clean Mercari product listings into structured, analysis-ready datasets.",
+                vidrebany_title: "VidreBany Factory — Workforce Management Platform",
+                vidrebany_desc: "End-to-end freelance build: REST API, internal admin dashboard and native Android app.",
+                vidrebany_backend: "REST API with worker CRUD, work day scheduling, extra hours & public holiday management, PASETO auth, rate limiting, CORS, and Dockerized dev/prod deployments.",
+                vidrebany_dashboard: "Internal admin panel for production/standby/transport orders, user & admin management, non-conformity reporting with file uploads, and employee time-tracking, all synced in real time.",
+                vidrebany_app: "Native app with QR/barcode scanning for order and process management, enforcing sequential process validation and automatic order lifecycle handling.",
+                project_soulfriends: "Social networking app for yoga enthusiasts: Officially deployed at Play Store, a firebase-powered real-time chat, location-based discovery with map, posts with likes/comments and media, push notifications, swipeable profile matching, and YouTube video playback.",
+                projects_title: "Featured Projects",
+                project_wallapop: "A flip opportunity prediction service based on multiple processes to scrape, extract, analyze and train a flip opportunity machine learning prediction model.",
+                project_wallapop_tech: "Technologies: AI, Data Science, Machine Learning, Data Engineering, Data Analysis",
+                project_obramat: "A system to retrieve data from obramat platform for analytics and statistics. Sleek analytics dashboard and data crawler of a construction site.",
+                skills_title: "Technical Skills",
+                skills_backend: "Backend & Server",
+                skills_languages: "Languages & Frameworks",
+                education_title: "Education",
+                edu1_degree: "Bachelor's in Data Science",
+                edu1_date: "Feb 2025 - Present",
+                edu1_focus: "Focus: Machine Learning, Big Data",
+                edu2_degree: "Associate's in Web Development",
+                edu2_date: "Sep 2021 - Jun 2023",
+                edu2_desc: "Fullstack web development: design, responsiveness, backend, frontend, entrepreneurship, teamwork",
+                languages_title: "Languages",
+                lang_native: "Native or bilingual",
+                lang_elementary: "Elementary",
+                certifications_title: "Certifications",
+                cert1: "Git & GitHub - OpenWebinars (Mar 2023)",
+                cert2: "Agile UML - OpenWebinars (Dec 2022)",
+                cert3: "Introduction to Testing - OpenWebinars (Jan 2023)",
+                print_btn: "Print / Save as PDF"
+            },
+            es: {
+                title: "Desarrollador Back End | Ciencia de Datos e Ingeniería de Software",
+                portfolio: "Portafolio",
+                summary_title: "Resumen Profesional",
+                summary_text: "Desarrollador backend con experiencia en arquitectura de microservicios, desarrollo de APIs y optimización de bases de datos. Trayectoria comprobada en soluciones backend escalables, sistemas descentralizados y desarrollo full-stack. Fluido en inglés, español, ruso y catalán.",
+                experience_title: "Experiencia",
+                job1_title: "Desarrollador Back End @ Dribba, the mobile agency",
+                job1_date: "Mar 2025 - Jul 2026",
+                job1_desc1: "Desarrollo backend, microservicios con arquitectura hexagonal.<br>Transferencia de datos con GraphQL y desarrollo de APIs gRPC con Go.<br>Construcción de servicios en Go usando goroutines, channels y context para concurrencia y rendimiento.<br>Optimización de servicios con profiling, añadiendo patrones resilientes (reintentos, circuit breakers, transacciones).<br>Gestión de Google Cloud (Registry, Observabilidad, Logging, Análisis de Rendimiento)",
+                job1_desc2: "Habilidades: Desarrollo Back-End (principalmente Golang), Google Cloud, Gestión de Clústeres Kubernetes, Gestión integral de Elasticsearch, Pipelines Gitlab CI/CD",
+                job2_title: "Ingeniero de Software @ hello.app",
+                job2_date: "Abr 2022 - Oct 2024",
+                job2_desc1: "Posición a tiempo completo desarrollando sistemas backend y frontend.<br>Desarrollo inicial de la arquitectura core desde cero y configuración de kubernetes.<br>Gestión de Amazon Web Services (gestión de instancias, balanceo de carga, gestión de dominios)",
+                job2_desc2: "Habilidades: Golang, AWS, PostgreSQL, Kubernetes, Linux, Docker, APIs, Code Review, REST, Análisis de Datos",
+                job3_title: "Freelancer @ IT",
+                job3_date: "Ene 2021 - Abr 2022",
+                job3_desc1: "Proyectos de desarrollo de software medianos y pequeños",
+                job3_desc2: "Incluyendo: CMS, automatización de procesos, desarrollo de apps, scrapers de datos, crawlers, educación, portfolios.",
+                project_mercari: "Herramienta freelance de extracción de datos aún en uso y rentable para rastrear, analizar y limpiar listados de productos de Mercari en conjuntos de datos estructurados listos para análisis.",
+                vidrebany_title: "VidreBany Factory — Plataforma de Gestión de Personal",
+                vidrebany_desc: "Desarrollo freelance integral: API REST, panel de administración interno y app nativa Android.",
+                vidrebany_backend: "API REST con CRUD de trabajadores, programación de jornadas, gestión de horas extras y festivos, autenticación PASETO, rate limiting, CORS y despliegues Dockerizados dev/prod.",
+                vidrebany_dashboard: "Panel de administración interno para órdenes de producción/reserva/transporte, gestión de usuarios y administradores, reporte de no conformidades con subida de archivos y seguimiento de tiempo de empleados, todo sincronizado en tiempo real.",
+                vidrebany_app: "App nativa con escaneo QR/código de barras para gestión de órdenes y procesos, aplicando validación secuencial de procesos y manejo automático del ciclo de vida de órdenes.",
+                project_soulfriends: "App de redes sociales para entusiastas del yoga: Desplegada oficialmente en Play Store, chat en tiempo real con Firebase, descubrimiento basado en ubicación con mapa, publicaciones con likes/comentarios y multimedia, notificaciones push, emparejamiento de perfiles deslizables y reproducción de videos de YouTube.",
+                projects_title: "Proyectos Destacados",
+                project_wallapop: "Servicio de predicción de oportunidades de reventa basado en múltiples procesos para rastrear, extraer, analizar y entrenar un modelo de predicción de oportunidades de reventa con machine learning.",
+                project_wallapop_tech: "Tecnologías: IA, Ciencia de Datos, Machine Learning, Ingeniería de Datos, Análisis de Datos",
+                project_obramat: "Sistema para recuperar datos de la plataforma obramat para análisis y estadísticas. Dashboard de análisis elegante y crawler de datos de un sitio de construcción.",
+                skills_title: "Habilidades Técnicas",
+                skills_backend: "Backend y Servidor",
+                skills_languages: "Lenguajes y Frameworks",
+                education_title: "Educación",
+                edu1_degree: "Grado en Ciencia de Datos",
+                edu1_date: "Feb 2025 - Actualidad",
+                edu1_focus: "Enfoque: Machine Learning, Big Data",
+                edu2_degree: "Grado Superior en Desarrollo Web",
+                edu2_date: "Sep 2021 - Jun 2023",
+                edu2_desc: "Desarrollo web fullstack: diseño, responsive, backend, frontend, emprendimiento, trabajo en equipo",
+                languages_title: "Idiomas",
+                lang_native: "Nativo o bilingüe",
+                lang_elementary: "Básico",
+                certifications_title: "Certificaciones",
+                cert1: "Git & GitHub - OpenWebinars (Mar 2023)",
+                cert2: "Agile UML - OpenWebinars (Dic 2022)",
+                cert3: "Introducción al Testing - OpenWebinars (Ene 2023)",
+                print_btn: "Imprimir / Guardar como PDF"
+            }
+        };
 
-        // Ensure links are visible in print
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+
+            // Update button states
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+
+            // Re-initialize feather icons
+            feather.replace();
+        }
+
+        function downloadPDF() {
+            // Small delay to ensure any pending renders are done
+            setTimeout(() => {
+                window.print();
+            }, 100);
+        }
+
+        // Initialize
         document.addEventListener('DOMContentLoaded', function () {
+            feather.replace();
+
+            // Ensure links are visible in print
             const links = document.querySelectorAll('a');
             links.forEach(link => {
                 link.setAttribute('target', '_blank');
-                if (link.href) {
+                if (link.href && !link.querySelector('.print-url')) {
                     const urlSpan = document.createElement('span');
                     urlSpan.className = 'print-url text-xs text-gray-500 block print:inline print:ml-1';
                     urlSpan.textContent = `(${link.href})`;
